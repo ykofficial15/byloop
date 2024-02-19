@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:practice/Models/authenticate.dart';
 import 'package:practice/Views/home.dart';
+import 'package:practice/Views/login.dart';
 import 'package:provider/provider.dart';
 
 class Signup extends StatefulWidget {
@@ -88,6 +89,15 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       appBar: AppBar(
+        backgroundColor: Colors.orange,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
       body: SingleChildScrollView(
         child: Stack(
           children: [
@@ -99,7 +109,7 @@ class _SignupState extends State<Signup> {
               ),
             ),
             Positioned(
-              top: MediaQuery.of(context).size.height * 0.2, // Adjust the spacing from the top
+              top: MediaQuery.of(context).size.height * 0.1, // Adjust the spacing from the top
               left: 0,
               right: 0,
               child: Container(
@@ -240,8 +250,37 @@ class _SignupState extends State<Signup> {
                                     ),
                                   ),
                             ),
-                           
                           ),
+                         const SizedBox(height: 15,),
+                          Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+       const Text(
+          'Already have an account?',
+          style: TextStyle(
+            fontSize: 16,
+            color: Colors.black,
+          ),
+        ),
+        SizedBox(width: 5),
+        GestureDetector(
+          onTap: () {
+            Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => Login()),
+                        );
+          },
+          child: const Text(
+            'Login',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.blue,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+    )
                         ],
                       ),
                     ),
@@ -251,8 +290,8 @@ class _SignupState extends State<Signup> {
               ),
             ),
             Positioned(
-              left: MediaQuery.sizeOf(context).width/3.7, 
-              top:MediaQuery.of(context).size.height * 0.1, 
+   left: MediaQuery.of(context).size.width / 4, 
+              top:MediaQuery.of(context).size.height*0.0, 
               child: Image.asset('assets/logo.png', height: 200, width: 200),
             ),
           ],

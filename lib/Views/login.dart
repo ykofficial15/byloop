@@ -34,8 +34,8 @@ void _checkUserExist() async {
         backgroundColor: Colors.green,
         textColor: Colors.white,
       );
-      // final authProvider = Provider.of<Authenticate>(context, listen: false);
-      // authProvider.login();
+      final authProvider = Provider.of<Authenticate>(context, listen: false);
+      authProvider.login();
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => Home()),
       );
@@ -261,7 +261,7 @@ void _checkUserExist() async {
                         ),
                       ),
                       const SizedBox(
-                        height: 88.0,
+                        height: 70.0,
                       ),
                       Container(
                         margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
@@ -292,7 +292,7 @@ void _checkUserExist() async {
               ),
             ),
             Positioned(
-              left: MediaQuery.sizeOf(context).width/3.7, 
+              left: MediaQuery.of(context).size.width / 4,
               top:MediaQuery.of(context).size.height * 0.1, 
               child: Image.asset('assets/logo.png', height: 200, width: 200),
             ),

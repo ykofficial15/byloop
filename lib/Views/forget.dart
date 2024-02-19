@@ -74,6 +74,15 @@ class _ForgetState extends State<Forget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
       body: SingleChildScrollView(
         child: Stack(
           children: [
@@ -85,7 +94,7 @@ class _ForgetState extends State<Forget> {
               ),
             ),
             Positioned(
-              top: MediaQuery.of(context).size.height * 0.2, // Adjust the spacing from the top
+              top: MediaQuery.of(context).size.height * 0.1, // Adjust the spacing from the top
               left: 0,
               right: 0,
               child: Container(
@@ -111,7 +120,7 @@ class _ForgetState extends State<Forget> {
                   'Reset Your Password',
                   style: TextStyle(
                     color: Colors.blue,
-                    fontSize: 30.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -128,7 +137,7 @@ class _ForgetState extends State<Forget> {
                   ),
                 ),
               ),
-              SizedBox(height: 25.0),
+              const SizedBox(height: 25.0),
               Container(
                 margin: EdgeInsetsDirectional.symmetric(horizontal: 20),
                 width: MediaQuery.of(context).size.width,
@@ -152,7 +161,7 @@ class _ForgetState extends State<Forget> {
                   ),
                 ),
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               Container(
                 margin: EdgeInsetsDirectional.symmetric(horizontal: 20),
                 width: MediaQuery.of(context).size.width,
@@ -175,8 +184,8 @@ class _ForgetState extends State<Forget> {
               ),
             ),
             Positioned(
-              left: MediaQuery.sizeOf(context).width/3.7, 
-              top:MediaQuery.of(context).size.height * 0.1, 
+             left: MediaQuery.of(context).size.width / 4,
+              top:MediaQuery.of(context).size.height * 0.0, 
               child: Image.asset('assets/logo.png', height: 200, width: 200),
             ),
           ],
