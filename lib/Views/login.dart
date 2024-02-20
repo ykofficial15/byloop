@@ -135,7 +135,7 @@ void _checkUserExist() async {
                                 ),
                               ),
                                   const Text(
-                                'delicious Indian stree foods online',
+                                'delicious Indian street foods online',
                                 style: TextStyle(
                                   color: Colors.blue,
                                 ),
